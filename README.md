@@ -1,14 +1,14 @@
 
 ### Go Notes
 
-[x]  Staically typed
-[x] Fast run time 
-[x] Compiled
-[x] Fast Compiled time 
-[x] Supports concurrency through goroutines and channel.
-[x] Has automatic garbage collection
-[x] Does not support classes and objects
-[x] Does not supports inheritance
+- [x]   Staically typed
+- [x]   Fast run time 
+- [x] Compiled
+- [x] Fast Compiled time 
+- [x] Supports concurrency through goroutines and channel.
+- [x] Has automatic garbage collection
+- [x] Does not support classes and objects
+- [x] Does not supports inheritance
 
 
 #### first.go 
