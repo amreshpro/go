@@ -4,7 +4,6 @@ import "fmt"
 
 
 func main() {
-  
 var isLoggedIn bool  = false
 var small int8 = 23
 var small2 int16 = 278

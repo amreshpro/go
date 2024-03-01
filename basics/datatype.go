@@ -1,6 +1,7 @@
 package main
 import ("fmt")
 
+
 func main() {
   var a bool = true     // Boolean
   var b int = 5         // Integer
