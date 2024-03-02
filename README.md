@@ -1,26 +1,23 @@
-
 ### Go Notes
 
-- [x]   Staically typed
-- [x]   Fast run time 
+- [x] Staically typed
+- [x] Fast run time
 - [x] Compiled
-- [x] Fast Compiled time 
+- [x] Fast Compiled time
 - [x] Supports concurrency through goroutines and channel.
 - [x] Has automatic garbage collection
 - [x] Does not support classes and objects
 - [x] Does not supports inheritance
 
+#### first.go
 
-#### first.go 
-
-```go 
+```go
 package main
 import "fmt"
 func main()  {
   fmt.Println("Hello Golang")
 }
 ```
-
 
 fmt.Println("Hello World!") is a statement.
 
@@ -40,16 +37,16 @@ func main()//error
 }
 ```
 
- way1  - syntax :- var variablename type = value
+way1 - syntax :- var variablename type = value
 
- way2 - with the := sign , variablename := value
+way2 - with the := sign , variablename := value
 
 > Note: In this case, the type of the variable is inferred from the value (means that the compiler decides the type of the variable, based on the value).
 
 > Note: It is not possible to declare a variable using :=, without assigning a value to it.
 
+### var vs :=
 
-### var    vs    :=
 var --> used inside or outside of function
 
 := --> only inside functions
@@ -58,15 +55,15 @@ var --> variable declaration and value assignment can done separately.
 
 := --> Variable declaration and value assignment **cannot be done separately** (must be done in the same line)
 
-
 > Note: If you use the type keyword, it is only possible to declare one type of variable per line.
-> 
+>
 > If the type keyword is not specified, you can declare different types of variables in the same line:
+
 ```go
  var a3, b3 = 6, "Hello"
 	c3, d3 := 7, "World!"
 	fmt.Println("-----")
-  
+
 	fmt.Println(a3)//6
 	fmt.Println(b3)// "Hello"
 	fmt.Println(c3)//7
@@ -74,8 +71,6 @@ var --> variable declaration and value assignment can done separately.
 ```
 
 #### Multiple variable declarations can also be grouped together into a block for greater readability:
-
-
 
 ```go
 func main() {
@@ -92,6 +87,7 @@ func main() {
 ```
 
 Multiple constants can be grouped together into a block for readability:
+
 ```go
 const (
   A int = 1
@@ -99,3 +95,4 @@ const (
   C = "Hi!"
 )
 ```
+

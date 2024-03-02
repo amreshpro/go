@@ -19,4 +19,4 @@ func main() {
 	fmt.Println(str)
 	fmt.Println(str[1])
 
-}
+
