@@ -9,4 +9,4 @@ package main
 // - Custom types
 
 
-// note numbers:=[]int{}  ==== otherNumbers:=make([]int,0)
+// note numbers:=[]int{}  === otherNumbers:=make([]int,0)
