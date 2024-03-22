@@ -1,0 +1,7 @@
+
+# 1. They all are equivalent
+
+s := ""
+var s string
+var s = ""
+var s string = ""
