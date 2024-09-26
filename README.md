@@ -1,147 +1,133 @@
-# Go
-
-### 5 Reason to choose go-lang
-
-- [x] Build Time
-- [x] Fast Startup
-- [x] Performance and Efficiency
-- [x] Concurrency Model
-- [x] State typing and compilation
 
 
-### Go Pro
-- [x] Staically typed
-- [x] Fast run time
-- [x] Compiled
-- [x] Fast Compiled time
-- [x] Supports concurrency through goroutines and channel.
-- [x] Has automatic garbage collection
-- [x] Does not support classes and objects
-- [x] Does not supports inheritance
-### Commands
+---
 
-`pkg`
-`bin`
-`src`
+# Go Language Notes
 
-`go --help`
-`bug` - open default browser to report new bug
-`build` compile package and dependencies
-`clean` remove object files and cached files
-`doc` show documentation for package or symbol
-`env` print go environment information
-`fix` update packages to use new APIs
-`fmt` gofmt (reformat) package resources
-`generate` generate Go files by processing source
-`get` add dependencies to current module and install them
-`install` install packages and dependencies
-`list` list packages or modules
-`mod` module maintenance
-`work` workspace maintenance
-`run` compile and run Go program
-`test` test package
-`tool` run specified go tool
-`version` print Go version
-`vet` report likely mistakes in packages
+### 5 Reasons to Choose Go (Golang)
 
-### Keywords
+1. **Build Time** – Fast build times due to its efficient compilation process.
+2. **Fast Startup** – Instant start-up times, making it great for quick server responses.
+3. **Performance and Efficiency** – Combines the efficiency of a statically typed, compiled language with the simplicity of dynamic languages.
+4. **Concurrency Model** – Goroutines provide lightweight, easy-to-use concurrency.
+5. **Strong Typing and Compilation** – Static typing and a strong type system ensure type safety and prevent many bugs during compile time.
+
+### Why Go is Great (Go Pros)
+
+- **Statically Typed** – Type checks during compile time, improving reliability.
+- **Fast Run Time** – Compiled to machine code, providing near C-level performance.
+- **Compiled Language** – Ensures faster performance and safety as the code runs directly on the hardware.
+- **Fast Compilation** – Go has one of the fastest compilation times among modern languages.
+- **Concurrency Support** – Through goroutines and channels, Go handles multiple tasks simultaneously.
+- **Automatic Garbage Collection** – Simplifies memory management by cleaning up unused memory.
+- **No Classes & Objects** – Object-oriented paradigms are simplified, no inheritance is used, focusing on composition over inheritance.
+
+---
+
+### Common Go Commands
+
+Here are some frequently used Go commands:
+
+- `pkg` – Package management.
+- `bin` – Binary directory for compiled Go programs.
+- `src` – Source directory for Go code.
+
+Other important commands include:
+
+- `go --help` – Show command options.
+- `bug` – Opens a browser to report bugs.
+- `build` – Compile the package and dependencies.
+- `clean` – Remove object and cached files.
+- `doc` – Show documentation for packages.
+- `env` – Print Go environment information.
+- `fix` – Update packages to use new APIs.
+- `fmt` – Format Go code (automatically adjusts indentation, spacing).
+- `generate` – Generate Go files based on source code.
+- `get` – Add and install dependencies.
+- `install` – Install package dependencies.
+- `list` – List packages or modules.
+- `mod` – Manage Go modules (dependencies).
+- `run` – Compile and run Go program.
+- `test` – Run unit tests for packages.
+- `version` – Print Go version.
+- `vet` – Report suspicious constructs that could be bugs.
+
+---
+
+### Go Keywords
+
+Go language reserves the following keywords:
 
 ```go
-package
-break
-default
-func
-interface
-select
-case
-defer
-go
-map
-delete
-struct
-chan
-if
-else
-goto
-package
-switch
-const
-var
-for
-fallthrough
-range
-type
-continue
-import
-return
-
-
-
+package, break, default, func, interface, select, 
+case, defer, go, map, delete, struct, 
+chan, if, else, goto, package, switch, 
+const, var, for, fallthrough, range, type, 
+continue, import, return
 ```
 
+---
 
-#### first.go
+### Writing Your First Go Program
+
+Example: `first.go`
 
 ```go
 package main
 import "fmt"
-func main()  {
+
+func main() {
+    fmt.Println("Hello Golang")
+}
+```
+
+**Explanation:**
+
+- **fmt.Println** – This prints the output. In this case, it prints "Hello Golang".
+- Statements in Go are separated by either pressing "Enter" or by using a semicolon (`;`). However, Go automatically adds semicolons when you hit "Enter".
+
+> **Note:** The `{` must be on the same line as the function declaration. For example:
+
+```go
+func main() // error if `{` is on a new line
+{
   fmt.Println("Hello Golang")
 }
 ```
 
-fmt.Println("Hello World!") is a statement.
+---
 
-In Go, statements are separated by ending a line (hitting the Enter key) or by a semicolon `;`.
+### Variable Declaration in Go
 
-Hitting the Enter key adds `;` to the end of the line implicitly (does not show up in the source code).
+Go provides two ways to declare variables:
 
-> The left curly bracket `{` cannot come at the start of a line.
+1. **Using `var`**:
+    ```go
+    var variablename type = value
+    ```
+   - Used inside or outside functions.
+   - Declaration and assignment can be done separately.
 
-```go
-package main
-import ("fmt")
+2. **Using `:=`**:
+    ```go
+    variablename := value
+    ```
+   - Used only inside functions.
+   - Declaration and assignment **must** be done on the same line.
 
-func main()//error
-{
-  fmt.Println("Hello World!")
-}
-```
-
-way1 - syntax :- var variablename type = value
-
-way2 - with the := sign , variablename := value
-
-> Note: In this case, the type of the variable is inferred from the value (means that the compiler decides the type of the variable, based on the value).
-
-> Note: It is not possible to declare a variable using :=, without assigning a value to it.
-
-### var vs :=
-
-var --> used inside or outside of function
-
-:= --> only inside functions
-
-var --> variable declaration and value assignment can done separately.
-
-:= --> Variable declaration and value assignment **cannot be done separately** (must be done in the same line)
-
-> Note: If you use the type keyword, it is only possible to declare one type of variable per line.
->
-> If the type keyword is not specified, you can declare different types of variables in the same line:
+**Example:**
 
 ```go
- var a3, b3 = 6, "Hello"
-	c3, d3 := 7, "World!"
-	fmt.Println("-----")
-
-	fmt.Println(a3)//6
-	fmt.Println(b3)// "Hello"
-	fmt.Println(c3)//7
-	fmt.Println(d3)//World
+var a3, b3 = 6, "Hello"
+c3, d3 := 7, "World!"
+fmt.Println(a3, b3, c3, d3)
 ```
 
-#### Multiple variable declarations can also be grouped together into a block for greater readability:
+---
+
+### Grouped Variable Declarations
+
+Variables can also be declared together for better readability:
 
 ```go
 func main() {
@@ -150,14 +136,11 @@ func main() {
      b int = 1
      c string = "hello"
    )
-
-  fmt.Println(a)
-  fmt.Println(b)
-  fmt.Println(c)
+   fmt.Println(a, b, c)
 }
 ```
 
-Multiple constants can be grouped together into a block for readability:
+Similarly, constants can also be grouped together:
 
 ```go
 const (
@@ -167,54 +150,35 @@ const (
 )
 ```
 
+---
 
+### Data Types in Go
 
+Go supports several built-in types:
 
-### Types
+- **Basic Types**: `int`, `float64`, `string`, `bool`
+- **Complex Types**: `array`, `struct`, `map`, `slice`
+- **Type Aliases**:
+  - `byte` – Alias for `uint8`
+  - `rune` – Alias for `int32`, representing Unicode code points.
 
-````go
-package main
+---
 
-// Builtin and custom types
-// General types
-// - Structs
-// - Slices
-// - Maps
-// - arrays
-// - Custom types
+### Go Constants
 
+Constants in Go are immutable (cannot be changed once assigned). There are two types of constants:
 
-// note numbers:=[]int{}  === otherNumbers:=make([]int,0)
+1. **Typed Constants**:
+    ```go
+    const A int = 1
+    ```
 
+2. **Untyped Constants**:
+    ```go
+    const A = 1
+    ```
 
-bool
-
-string
-
-int  int8  int16  int32  int64
-uint uint8 uint16 uint32 uint64 uintptr
-
-byte // alias for uint8
-
-rune // alias for int32
-     // represents a Unicode code point
-
-float32 float64
-
-complex64 complex128```
-
-### Constants
-
-> The const keyword declares the variable as "constant", which means that it is unchangeable and read-only.
-
-There are two types of constants:
-
-- Typed constants
-  const A int = 1
-  Untyped constants
-  const A = 1
-
-- Multiple constants can be grouped together into a block for readability:
+Constants can also be grouped together:
 
 ```go
 const (
@@ -222,52 +186,58 @@ const (
   B = 3.14
   C = "Hi!"
 )
-````
+```
 
-### Maps
+---
 
-> map[KeyType]ValueType
-> ` var m map[string] int`
+### Maps in Go
 
-- Map types are reference types, like pointers or slices,
-  and so the value of m above is nil; it doesn’t point to an initialized map.
-  A nil map behaves like an empty map when reading,
-  but attempts to write to a nil map will cause a runtime panic;
-  don’t do that.
-  To initialize a map, use the built in make function:
-
-` m := make(map[string]int)`
-
-- The make function allocates and initializes a hash map data structure and returns a map value that points to it. The specifics of that data structure are an implementation detail of the runtime and are not specified by the language itself. In this article we will focus on the use of maps, not their implementation.
-
-### Channel
-
-- <- the data flows in the direction of the arrow.
-- Like maps and slices, channels must be created before use.
-- ch:=make(chan int)
-- ch<-v // send v to channel ch
-- v:=<-ch // receive from ch and assign value to v
+Maps in Go are used to store key-value pairs:
 
 ```go
+var m map[string]int
+```
 
+- A map must be initialized using `make()` before adding values.
+  ```go
+  m := make(map[string]int)
+  ```
+- Maps behave like slices or pointers, meaning a nil map cannot be written to but can be read from.
 
+---
+
+### Channels in Go
+
+Go provides **channels** to allow goroutines to communicate with each other.
+
+- **Channel Declaration**: `ch := make(chan int)`
+- To send data into a channel: `ch <- v`
+- To receive data from a channel: `v := <- ch`
+
+Example of using channels with goroutines:
+
+```go
 func sum(s []int, c chan int) {
-	sum := 0
-	for _, v := range s {
-		sum += v
-	}
-	c <- sum // send sum to c
+    sum := 0
+    for _, v := range s {
+        sum += v
+    }
+    c <- sum // send sum to channel c
 }
 
 func main() {
-	s := []int{7, 2, 8, -9, 4, 0}
+    s := []int{7, 2, 8, -9, 4, 0}
 
-	c := make(chan int)
-	go sum(s[:len(s)/2], c)
-	go sum(s[len(s)/2:], c)
-	x, y := <-c, <-c // receive from c
+    c := make(chan int)
+    go sum(s[:len(s)/2], c)
+    go sum(s[len(s)/2:], c)
+    x, y := <-c, <-c // receive from channel
 
-	fmt.Println(x, y, x+y)
+    fmt.Println(x, y, x+y)
 }
-
 ```
+
+**Explanation:**
+
+- **Goroutines** – Lightweight threads that run in parallel.
+- **Channels** – Used to pass data between goroutines safely.
